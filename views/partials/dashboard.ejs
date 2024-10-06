@@ -1,0 +1,18 @@
+<div id="dashboard">
+  <h1>MCQ Platform</h1>
+  <div class="dashboard-links">
+    <button><a href="/" style="color: white;">Home</a></button>
+    <% if (user && user.isAdmin) { %>
+      <button><a href="/mcqs/admin/requests" style="color: white;">Pending Questions</a></button>
+    <% } %>
+    <% if (user) { %>
+      <button><a href="/auth/logout" style="color: white;">Logout</a></button>
+      <span>Welcome, <%= user.username %>!</span>
+    <% } else { %>
+      <button><a href="/auth/login" style="color: white;">Login</a></button>
+      <button><a href="/auth/signup" style="color: white;">Sign Up</a></button>
+    <% } %>
+  </div>
+  <button id="mode-toggle">Toggle Dark Mode</button>
+</div>
+<script src="/javascripts/main.js"></script>

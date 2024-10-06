@@ -1,0 +1,107 @@
+/* Global Styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  color: #333;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+#dashboard {
+  background-color: #fff;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#dashboard h1 {
+  margin: 0;
+}
+
+#dashboard button {
+  padding: 5px 10px;
+  cursor: pointer;
+  background-color: #3e4042;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+#dashboard button:hover {
+  background-color: #0056b3;
+}
+
+/* Light Mode Styles */
+body {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+.mcq-item {
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #fff;
+}
+
+.mcq-item p {
+  margin: 0 0 10px;
+}
+
+.mcq-item button {
+  display: block;
+  margin: 5px 0;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.mcq-item button.correct {
+  background-color: green;
+  color: #fff;
+}
+
+.mcq-item button.incorrect {
+  background-color: red;
+  color: #fff;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+  background-color: #333;
+  color: #f0f0f0;
+}
+
+body.dark-mode #dashboard {
+  background-color: #444;
+  border-bottom: 1px solid #555;
+}
+
+body.dark-mode #dashboard button {
+  background-color: #666;
+  color: #f0f0f0;
+}
+
+body.dark-mode .mcq-item {
+  background-color: #444;
+  border: 1px solid #555;
+}
+
+body.dark-mode .mcq-item button {
+  background-color: #666;
+  color: #f0f0f0;
+}
+
+body.dark-mode .mcq-item button.correct {
+  background-color: #228B22;
+}
+
+body.dark-mode .mcq-item button.incorrect {
+  background-color: #B22222;
+}

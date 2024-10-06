@@ -1,0 +1,29 @@
+<head>
+  <link rel="stylesheet" href="/stylesheets/login.css">
+</head>
+
+<%- include('partials/dashboard') %>
+
+<div class="auth-container">
+  <h2><%= title || 'Login' %></h2>
+
+  <% if (error === 'invalid-credentials') { %>
+    <p style="color: red;">Invalid credentials. Please check your password.</p>
+  <% } %>
+
+  <form method="POST" action="<%= action || '/auth/login' %>">
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" required>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required>
+
+    <button type="submit"><%= title || 'Login' %></button>
+  </form>
+
+</div>
+
+<script src="/javascripts/main.js"></script>
+
+
+

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MCQ Platform</title>
+  <link rel="stylesheet" href="/stylesheets/style.css">
+  <link rel="stylesheet" href="/stylesheets/add-question.css">
+</head>
+
+<!-- <%- include('partials/dashboard') %> -->
+<%- include('partials/dashboard') %>
+<body>
+  <!-- Add Question Form -->
+  <h2>Add a New Question</h2>
+  <% if(typeof added !== 'undefined' && added) { %>
+    <div class="success-message">Question added successfully!</div>
+  <% } %>
+  <form id="add-question-form" method="POST" action="/mcqs/add">
+    <label for="question">Question:</label>
+    <input type="text" id="question" name="question" required>
+
+    <label for="options">Options (separated by commas):</label>
+    <input type="text" id="options" name="options" required>
+
+    <label for="correctAnswer">Correct Answer:</label>
+    <input type="text" id="correctAnswer" name="correctAnswer" required>
+
+    <label for="tags">Tags (separated by commas):</label>
+    <input type="text" id="tags" name="tags" required>
+
+    <button type="submit">Add Question</button>
+  </form>
+
+  <!-- Search Bar -->
+  <input type="text" id="search-bar" placeholder="Search by tag..." value="<%= typeof tag !== 'undefined' ? tag : '' %>">
+
+  <!-- MCQ List -->
+  <div id="mcq-list">
+    <% if (mcqs.length > 0) { %>
+      <% mcqs.forEach(mcq => { %>
+        <div class="mcq-item" data-correct="<%= mcq.correctAnswer %>">
+          <p><%= mcq.question %></p>
+          <% mcq.options.forEach(option => { %>
+            <button><%= option %></button>
+          <% }) %>
+        </div>
+      <% }) %>
+    <% } 
+    else 
+    { %>
+      <p>No questions available for the selected tag.</p>
+    <% } %>
+  </div>
+
+  <script src="/javascripts/main.js"></script>
+</body>
+</html>

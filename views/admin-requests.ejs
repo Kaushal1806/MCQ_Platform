@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Admin - Pending Questions</title>
+  <link rel="stylesheet" href="/stylesheets/style.css">
+  <link rel="stylesheet" href="/stylesheets/admin.css"> <!-- Optional: Separate CSS for admin -->
+</head>
+<body>
+  <%- include('partials/dashboard') %>
+
+  <div class="admin-container">
+    <h2>Pending Questions</h2>
+
+    <% if (pendingQuestions.length === 0) { %>
+      <p>No pending questions.</p>
+    <% } else { %>
+      <ul class="pending-questions-list">
+        <% pendingQuestions.forEach(question => { %>
+          <li class="pending-question-item">
+            <h3><%= question.question %></h3>
+            <ul>
+              <% question.options.forEach((option, index) => { %>
+                <li><strong>Option <%= index + 1 %>:</strong> <%= option %></li>
+              <% }) %>
+            </ul>
+            <p><strong>Correct Answer:</strong> <%= question.correctAnswer %></p>
+            <p><strong>Tags:</strong> <%= question.tags.join(', ') %></p>
+            <p><strong>Submitted By:</strong> <%= question.createdBy.username %> (<%= question.createdBy.email %>)</p>
+            <div class="admin-actions">
+
+              <form method="POST" action="/mcqs/admin/approve/<%= question._id %>">
+                <button type="submit" class="approve-button">Approve</button>
+              </form>
+
+              <form method="POST" action="/mcqs/admin/delete/<%= question._id %>">
+                <button type="submit" class="delete-button">Delete</button>
+              </form>
+              
+            </div>
+          </li>
+        <% }) %>
+      </ul>
+    <% } %>
+  </div>
+
+  <script src="/javascripts/main.js"></script>
+</body>
+</html>

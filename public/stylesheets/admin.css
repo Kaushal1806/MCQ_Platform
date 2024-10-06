@@ -1,0 +1,105 @@
+/* admin.css */
+
+/* Center the admin container */
+.admin-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .admin-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .pending-questions-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .pending-question-item {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+    background-color: #f9f9f9;
+  }
+  
+  .pending-question-item h3 {
+    margin-top: 0;
+    color: #333;
+  }
+  
+  .pending-question-item ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .pending-question-item ul li {
+    margin-bottom: 5px;
+  }
+  
+  .admin-actions {
+    margin-top: 10px;
+  }
+  
+  .approve-button, .delete-button {
+    padding: 8px 12px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .approve-button {
+    background-color: #28a745;
+    color: #fff;
+  }
+  
+  .approve-button:hover {
+    background-color: #218838;
+  }
+  
+  .delete-button {
+    background-color: #dc3545;
+    color: #fff;
+  }
+  
+  .delete-button:hover {
+    background-color: #c82333;
+  }
+  
+  /* Dark Mode Styles for Admin */
+  
+  body.dark-mode .admin-container {
+    background-color: #444;
+    color: #f0f0f0;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+  }
+  
+  body.dark-mode .admin-container h2 {
+    color: #f0f0f0;
+  }
+  
+  body.dark-mode .pending-question-item {
+    background-color: #555;
+    border: 1px solid #666;
+  }
+  
+  body.dark-mode .pending-question-item h3 {
+    color: #f0f0f0;
+  }
+  
+  body.dark-mode .approve-button {
+    background-color: #28a745;
+  }
+  
+  body.dark-mode .delete-button {
+    background-color: #dc3545;
+  }
+  
