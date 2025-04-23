@@ -46,36 +46,4 @@ router.get('/logout', (req, res) => {
   });
 });
 
-
-
-// router.get('/logout', (req, res) => {
-//   // Destroy the session
-//   console.log("logout route hit")
-//   // req.session.destroy(err => {
-//   //   if (err) {
-//   //     console.error('Error during logout:', err);
-//   //     return res.status(500).send('Server error');
-//   //   }
-    
-//   // });
-//   // res
-//   //   .status(200)
-//   //   .cookie("token", "", {
-//   //     expires: new Date(Date.now()),
-//   //     sameSite: process.env.NODE_ENV === "Develpoment" ? "lax" : "none",
-//   //     secure: process.env.NODE_ENV === "Develpoment" ? false : true,
-//   //   })
-//   //   .redirect('/'); // Redirect to the login page after logout
-
-
-//   res.cookie('authToken', '', { expires: new Date(Date.now() - 864e5), path: '/' });
-//   res.cookie('sessionId', '', { expires: new Date(Date.now() - 864e5), path: '/' });
-
-//     // Redirect to the home page
-//   res.redirect('/');
-
-  
-// });
-
-
 module.exports = router;
